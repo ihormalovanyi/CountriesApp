@@ -9,14 +9,12 @@ import Foundation
 
 class CountrySearchProcess: Process {
     
-    //MARK: Active State
     private(set) var countrySearchState = CountrySearchUIState(searchedCountries: []) {
         didSet {
             onStateChanged?()
         }
     }
     
-    //MARK: Passive State
     private(set) var selectedCountry: CountryModelRaw.Displayable?
     
     //MARK: Properties
