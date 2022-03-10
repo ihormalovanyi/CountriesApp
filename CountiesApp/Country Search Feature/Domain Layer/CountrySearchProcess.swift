@@ -10,17 +10,7 @@ import Foundation
 class CountrySearchProcess: Process {
     
     //MARK: Active State
-    private(set) var searchedCountries: [CountryModelRaw.Displayable] = [] {
-        didSet {
-            onStateChanged?()
-        }
-    }
-    private(set) var isLoading: Bool = false {
-        didSet {
-            onStateChanged?()
-        }
-    }
-    private(set) var isSearchTextEmpty = true {
+    private(set) var countrySearchState = CountrySearchUIState(searchedCountries: []) {
         didSet {
             onStateChanged?()
         }
@@ -44,36 +34,36 @@ class CountrySearchProcess: Process {
     //MARK: Functions
     func searchCountries(by text: String) {
         timer?.invalidate()
-        isLoading = false
+        countrySearchState.isLoading = false
         
         if text.isEmpty {
-            searchedCountries = []
-            isSearchTextEmpty = true
+            countrySearchState.searchedCountries = []
+            countrySearchState.isSearchTextEmpty = true
             
             return
         }
         
-        isSearchTextEmpty = false
+        countrySearchState.isSearchTextEmpty = false
         
-        isLoading = true
+        countrySearchState.isLoading = true
         timer = .scheduledTimer(withTimeInterval: 0.5, repeats: false, block: { [weak self] _ in
             self?.network.searchCountries(text) { result in
                 switch result {
                 case .result(let models):
-                    self?.searchedCountries = models.compactMap { $0.displayable }
+                    self?.countrySearchState.searchedCountries = models.compactMap { $0.displayable }
                 case .error:
-                    self?.searchedCountries = []
+                    self?.countrySearchState.searchedCountries = []
                 }
                 
-                self?.isLoading = false
+                self?.countrySearchState.isLoading = false
             }
         })
     }
     
     func selectCountry(at index: Int) {
-        guard !searchedCountries.isEmpty else { return }
+        guard !countrySearchState.searchedCountries.isEmpty else { return }
         
-        selectedCountry = searchedCountries[index]
+        selectedCountry = countrySearchState.searchedCountries[index]
         router?.showCountryDetails(in: self)
     }
     

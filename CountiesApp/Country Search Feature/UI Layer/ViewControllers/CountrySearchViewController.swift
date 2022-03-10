@@ -11,10 +11,13 @@ final class CountrySearchViewController: BaseViewController<CountrySearchProcess
     
     struct Constants {
         
-        static var title = "Country Search"
+        static var title = ""
         
     }
     
+    private var countrySearchState: CountrySearchUIState {
+        process.countrySearchState
+    }
     private var tableView = UITableView()
     
     override func viewDidLoad() {
@@ -65,19 +68,19 @@ final class CountrySearchViewController: BaseViewController<CountrySearchProcess
 extension CountrySearchViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        process.searchedCountries.count > 0 ? process.searchedCountries.count : 1
+        countrySearchState.searchedCountries.count > 0 ? countrySearchState.searchedCountries.count : 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         var cell: UITableViewCell
         
-        if process.searchedCountries.count == 0 {
+        if countrySearchState.searchedCountries.count == 0 {
             cell = tableView.dequeueReusableCell(withIdentifier: "StatusCell", for: indexPath)
-            (cell as? StatusCell)?.setup(process.isLoading ? .loading : .message(process.isSearchTextEmpty ? "Start typing to search" : "Nothing found"))
+            (cell as? StatusCell)?.setup(countrySearchState.isLoading ? .loading : .message(countrySearchState.serviceMessage))
         } else {
             cell = tableView.dequeueReusableCell(withIdentifier: "CountryCell", for: indexPath)
-            (cell as? CountryCell)?.setup(process.searchedCountries[indexPath.row])
+            (cell as? CountryCell)?.setup(countrySearchState.searchedCountries[indexPath.row])
         }
         
         return cell
