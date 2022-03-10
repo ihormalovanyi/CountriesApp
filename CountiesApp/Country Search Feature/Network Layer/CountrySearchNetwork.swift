@@ -19,7 +19,7 @@ final class CountrySearchNetwork {
     private var networkService = NetworkService()
     private var activeTask: URLSessionDataTask?
     
-    func searchCountries(_ text: String, completion: @escaping ([CountryModelRaw]) -> ()) {
+    func searchCountries(_ text: String, completion: @escaping (NetworkService.Result<[CountryModelRaw]>) -> ()) {
         activeTask?.cancel()
         activeTask = nil
         

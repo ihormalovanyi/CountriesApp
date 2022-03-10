@@ -19,10 +19,12 @@ class BaseViewController<P: Process>: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
+    //When View Controller is first controller in feature
     func startFlow() {
         process = .init()
     }
     
+    //When View Controller continues the live feature
     func continueFlow(_ process: P) {
         self.process = process
     }

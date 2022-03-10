@@ -20,7 +20,7 @@ final class ImageLoading {
         }
     }
     
-    func loadImage() {
+    private func loadImage() {
         activeTask?.cancel()
         activeTask = nil
         

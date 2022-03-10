@@ -98,6 +98,7 @@ final class CountryDetailsViewController: BaseViewController<CountrySearchProces
             infoLabel.textColor = .label
             infoLabel.font = .systemFont(ofSize: 15, weight: .regular)
             infoLabel.text = element.info
+            infoLabel.numberOfLines = 0
             
             stack.addArrangedSubview(titleLabel)
             stack.addArrangedSubview(infoLabel)

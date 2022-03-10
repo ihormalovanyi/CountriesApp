@@ -10,7 +10,7 @@ import UIKit
 
 class Router {
     
-    var navigationController: UINavigationController!
+    private var navigationController: UINavigationController!
     
     init(_ window: UIWindow?) {
         let initialVC = createCountrySearchFlow()

@@ -23,8 +23,20 @@ final class CountrySearchViewController: BaseViewController<CountrySearchProcess
         view.backgroundColor = .systemBackground
         title = Constants.title
         
+        process.onStateChanged = { [weak self] in
+            DispatchQueue.main.async {
+                self?.tableView.reloadData()
+            }
+        }
+        
         setupSearch()
         setupTable()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        navigationItem.searchController?.searchBar.becomeFirstResponder()
     }
     
     private func setupSearch() {
@@ -35,9 +47,11 @@ final class CountrySearchViewController: BaseViewController<CountrySearchProcess
     private func setupTable() {
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.keyboardDismissMode = .onDrag
+        tableView.register(StatusCell.self, forCellReuseIdentifier: "StatusCell")
         tableView.register(CountryCell.self, forCellReuseIdentifier: "CountryCell")
         tableView.dataSource = self
         tableView.delegate = self
+        tableView.estimatedRowHeight = 44
         
         view.addSubview(tableView)
         
@@ -51,12 +65,20 @@ final class CountrySearchViewController: BaseViewController<CountrySearchProcess
 extension CountrySearchViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        process.searchedCountries.count
+        process.searchedCountries.count > 0 ? process.searchedCountries.count : 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "CountryCell", for: indexPath)
-        (cell as? CountryCell)?.setup(process.searchedCountries[indexPath.row])
+        
+        var cell: UITableViewCell
+        
+        if process.searchedCountries.count == 0 {
+            cell = tableView.dequeueReusableCell(withIdentifier: "StatusCell", for: indexPath)
+            (cell as? StatusCell)?.setup(process.isLoading ? .loading : .message(process.isSearchTextEmpty ? "Start typing to search" : "Nothing found"))
+        } else {
+            cell = tableView.dequeueReusableCell(withIdentifier: "CountryCell", for: indexPath)
+            (cell as? CountryCell)?.setup(process.searchedCountries[indexPath.row])
+        }
         
         return cell
     }
@@ -70,11 +92,7 @@ extension CountrySearchViewController: UITableViewDataSource, UITableViewDelegat
 extension CountrySearchViewController: UISearchBarDelegate {
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        process.searchCountries(by: searchText) { [weak self] in
-            DispatchQueue.main.async {
-                self?.tableView.reloadData()
-            }
-        }
+        process.searchCountries(by: searchText)
     }
     
 }

@@ -91,7 +91,7 @@ struct CountryModelRaw: Decodable {
                 summary.append(("Borders", "\(borders.count)"))
             }
             if let area = raw.area {
-                summary.append(("Area", "\(area)m²"))
+                summary.append(("Area", "\(Int(area))km²"))
             }
             if let population = raw.population {
                 summary.append(("Population", "\(population)"))

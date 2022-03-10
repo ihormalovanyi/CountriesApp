@@ -21,6 +21,7 @@
 		878842F827DA1DE000ED87FC /* CountryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878842F727DA1DE000ED87FC /* CountryCell.swift */; };
 		878842FA27DA2D9700ED87FC /* CountryDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878842F927DA2D9700ED87FC /* CountryDetailsViewController.swift */; };
 		8788430127DA4B9400ED87FC /* ImageLoading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8788430027DA4B9400ED87FC /* ImageLoading.swift */; };
+		8788430327DA58F500ED87FC /* StatusCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8788430227DA58F500ED87FC /* StatusCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		878842F727DA1DE000ED87FC /* CountryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryCell.swift; sourceTree = "<group>"; };
 		878842F927DA2D9700ED87FC /* CountryDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryDetailsViewController.swift; sourceTree = "<group>"; };
 		8788430027DA4B9400ED87FC /* ImageLoading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoading.swift; sourceTree = "<group>"; };
+		8788430227DA58F500ED87FC /* StatusCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -175,6 +177,7 @@
 			isa = PBXGroup;
 			children = (
 				878842F727DA1DE000ED87FC /* CountryCell.swift */,
+				8788430227DA58F500ED87FC /* StatusCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -255,6 +258,7 @@
 				878842C927D9ED7E00ED87FC /* AppDelegate.swift in Sources */,
 				878842E727DA0E8200ED87FC /* Router.swift in Sources */,
 				878842DE27D9F41100ED87FC /* CountrySearchNetwork.swift in Sources */,
+				8788430327DA58F500ED87FC /* StatusCell.swift in Sources */,
 				8788430127DA4B9400ED87FC /* ImageLoading.swift in Sources */,
 				878842FA27DA2D9700ED87FC /* CountryDetailsViewController.swift in Sources */,
 				878842F527DA122E00ED87FC /* NetworkService.swift in Sources */,
