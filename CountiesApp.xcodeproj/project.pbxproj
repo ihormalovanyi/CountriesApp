@@ -8,22 +8,32 @@
 
 /* Begin PBXBuildFile section */
 		878842C927D9ED7E00ED87FC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878842C827D9ED7E00ED87FC /* AppDelegate.swift */; };
-		878842CB27D9ED7E00ED87FC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878842CA27D9ED7E00ED87FC /* SceneDelegate.swift */; };
-		878842CD27D9ED7E00ED87FC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878842CC27D9ED7E00ED87FC /* ViewController.swift */; };
-		878842D027D9ED7E00ED87FC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 878842CE27D9ED7E00ED87FC /* Main.storyboard */; };
+		878842CD27D9ED7E00ED87FC /* CountrySearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878842CC27D9ED7E00ED87FC /* CountrySearchViewController.swift */; };
 		878842D227D9ED8000ED87FC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 878842D127D9ED8000ED87FC /* Assets.xcassets */; };
 		878842D527D9ED8000ED87FC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 878842D327D9ED8000ED87FC /* LaunchScreen.storyboard */; };
+		878842DE27D9F41100ED87FC /* CountrySearchNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878842DD27D9F41100ED87FC /* CountrySearchNetwork.swift */; };
+		878842E227D9FC2900ED87FC /* CountryModelRaw.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878842E127D9FC2900ED87FC /* CountryModelRaw.swift */; };
+		878842E527DA0E6100ED87FC /* CountrySearchProcess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878842E427DA0E6100ED87FC /* CountrySearchProcess.swift */; };
+		878842E727DA0E8200ED87FC /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878842E627DA0E8200ED87FC /* Router.swift */; };
+		878842EF27DA10EB00ED87FC /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878842EE27DA10EB00ED87FC /* BaseViewController.swift */; };
+		878842F227DA111A00ED87FC /* Process.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878842F127DA111A00ED87FC /* Process.swift */; };
+		878842F527DA122E00ED87FC /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878842F427DA122E00ED87FC /* NetworkService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		878842C527D9ED7E00ED87FC /* CountiesApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CountiesApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		878842C827D9ED7E00ED87FC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		878842CA27D9ED7E00ED87FC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		878842CC27D9ED7E00ED87FC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		878842CF27D9ED7E00ED87FC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		878842CC27D9ED7E00ED87FC /* CountrySearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountrySearchViewController.swift; sourceTree = "<group>"; };
 		878842D127D9ED8000ED87FC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		878842D427D9ED8000ED87FC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		878842D627D9ED8000ED87FC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		878842DD27D9F41100ED87FC /* CountrySearchNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountrySearchNetwork.swift; sourceTree = "<group>"; };
+		878842E127D9FC2900ED87FC /* CountryModelRaw.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryModelRaw.swift; sourceTree = "<group>"; };
+		878842E427DA0E6100ED87FC /* CountrySearchProcess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountrySearchProcess.swift; sourceTree = "<group>"; };
+		878842E627DA0E8200ED87FC /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		878842EE27DA10EB00ED87FC /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		878842F127DA111A00ED87FC /* Process.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Process.swift; sourceTree = "<group>"; };
+		878842F427DA122E00ED87FC /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,14 +67,107 @@
 			isa = PBXGroup;
 			children = (
 				878842C827D9ED7E00ED87FC /* AppDelegate.swift */,
-				878842CA27D9ED7E00ED87FC /* SceneDelegate.swift */,
-				878842CC27D9ED7E00ED87FC /* ViewController.swift */,
-				878842CE27D9ED7E00ED87FC /* Main.storyboard */,
+				878842E627DA0E8200ED87FC /* Router.swift */,
+				878842EC27DA10D300ED87FC /* Shared */,
+				878842EB27DA109100ED87FC /* Country Search */,
 				878842D127D9ED8000ED87FC /* Assets.xcassets */,
 				878842D327D9ED8000ED87FC /* LaunchScreen.storyboard */,
 				878842D627D9ED8000ED87FC /* Info.plist */,
 			);
 			path = CountiesApp;
+			sourceTree = "<group>";
+		};
+		878842DC27D9F3E200ED87FC /* Network Layer */ = {
+			isa = PBXGroup;
+			children = (
+				878842DD27D9F41100ED87FC /* CountrySearchNetwork.swift */,
+			);
+			path = "Network Layer";
+			sourceTree = "<group>";
+		};
+		878842DF27D9FC1700ED87FC /* Domain Layer */ = {
+			isa = PBXGroup;
+			children = (
+				878842EA27DA107C00ED87FC /* Protocols */,
+				878842E027D9FC1D00ED87FC /* Models */,
+				878842E427DA0E6100ED87FC /* CountrySearchProcess.swift */,
+			);
+			path = "Domain Layer";
+			sourceTree = "<group>";
+		};
+		878842E027D9FC1D00ED87FC /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				878842E127D9FC2900ED87FC /* CountryModelRaw.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		878842E827DA100F00ED87FC /* UI Layer */ = {
+			isa = PBXGroup;
+			children = (
+				878842E927DA101E00ED87FC /* ViewControllers */,
+			);
+			path = "UI Layer";
+			sourceTree = "<group>";
+		};
+		878842E927DA101E00ED87FC /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				878842CC27D9ED7E00ED87FC /* CountrySearchViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		878842EA27DA107C00ED87FC /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		878842EB27DA109100ED87FC /* Country Search */ = {
+			isa = PBXGroup;
+			children = (
+				878842E827DA100F00ED87FC /* UI Layer */,
+				878842DF27D9FC1700ED87FC /* Domain Layer */,
+				878842DC27D9F3E200ED87FC /* Network Layer */,
+			);
+			path = "Country Search";
+			sourceTree = "<group>";
+		};
+		878842EC27DA10D300ED87FC /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				878842F327DA121300ED87FC /* Network */,
+				878842F027DA110900ED87FC /* Protocols */,
+				878842ED27DA10DB00ED87FC /* View Controllers */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		878842ED27DA10DB00ED87FC /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				878842EE27DA10EB00ED87FC /* BaseViewController.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		878842F027DA110900ED87FC /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				878842F127DA111A00ED87FC /* Process.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		878842F327DA121300ED87FC /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				878842F427DA122E00ED87FC /* NetworkService.swift */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -127,7 +230,6 @@
 			files = (
 				878842D527D9ED8000ED87FC /* LaunchScreen.storyboard in Resources */,
 				878842D227D9ED8000ED87FC /* Assets.xcassets in Resources */,
-				878842D027D9ED7E00ED87FC /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,23 +240,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				878842CD27D9ED7E00ED87FC /* ViewController.swift in Sources */,
+				878842E527DA0E6100ED87FC /* CountrySearchProcess.swift in Sources */,
+				878842CD27D9ED7E00ED87FC /* CountrySearchViewController.swift in Sources */,
 				878842C927D9ED7E00ED87FC /* AppDelegate.swift in Sources */,
-				878842CB27D9ED7E00ED87FC /* SceneDelegate.swift in Sources */,
+				878842E727DA0E8200ED87FC /* Router.swift in Sources */,
+				878842DE27D9F41100ED87FC /* CountrySearchNetwork.swift in Sources */,
+				878842F527DA122E00ED87FC /* NetworkService.swift in Sources */,
+				878842EF27DA10EB00ED87FC /* BaseViewController.swift in Sources */,
+				878842E227D9FC2900ED87FC /* CountryModelRaw.swift in Sources */,
+				878842F227DA111A00ED87FC /* Process.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		878842CE27D9ED7E00ED87FC /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				878842CF27D9ED7E00ED87FC /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		878842D327D9ED8000ED87FC /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -294,7 +394,6 @@
 				INFOPLIST_FILE = CountiesApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -322,7 +421,6 @@
 				INFOPLIST_FILE = CountiesApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
