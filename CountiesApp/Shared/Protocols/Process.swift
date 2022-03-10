@@ -6,9 +6,18 @@
 //
 
 import Foundation
+import UIKit
 
 protocol Process {
     
     init()
+    
+}
+
+extension Process {
+    
+    var router: Router? {
+        (UIApplication.shared.delegate as? AppDelegate)?.router
+    }
     
 }

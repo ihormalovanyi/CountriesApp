@@ -14,13 +14,26 @@ class Router {
     
     init(_ window: UIWindow?) {
         let initialVC = createCountrySearchFlow()
+        
         navigationController = UINavigationController(rootViewController: initialVC)
+        navigationController.navigationBar.prefersLargeTitles = true
+        
         window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
     }
     
     private func createCountrySearchFlow() -> CountrySearchViewController {
-        CountrySearchViewController()
+        let viewController = CountrySearchViewController()
+        viewController.startFlow()
+        
+        return viewController
+    }
+    
+    func showCountryDetails(in process: CountrySearchProcess) {
+        let viewController = CountryDetailsViewController()
+        viewController.continueFlow(process)
+        
+        navigationController.showDetailViewController(viewController, sender: nil)
     }
     
 }

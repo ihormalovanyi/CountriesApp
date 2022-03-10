@@ -18,6 +18,9 @@
 		878842EF27DA10EB00ED87FC /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878842EE27DA10EB00ED87FC /* BaseViewController.swift */; };
 		878842F227DA111A00ED87FC /* Process.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878842F127DA111A00ED87FC /* Process.swift */; };
 		878842F527DA122E00ED87FC /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878842F427DA122E00ED87FC /* NetworkService.swift */; };
+		878842F827DA1DE000ED87FC /* CountryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878842F727DA1DE000ED87FC /* CountryCell.swift */; };
+		878842FA27DA2D9700ED87FC /* CountryDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878842F927DA2D9700ED87FC /* CountryDetailsViewController.swift */; };
+		8788430127DA4B9400ED87FC /* ImageLoading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8788430027DA4B9400ED87FC /* ImageLoading.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +37,9 @@
 		878842EE27DA10EB00ED87FC /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		878842F127DA111A00ED87FC /* Process.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Process.swift; sourceTree = "<group>"; };
 		878842F427DA122E00ED87FC /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		878842F727DA1DE000ED87FC /* CountryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryCell.swift; sourceTree = "<group>"; };
+		878842F927DA2D9700ED87FC /* CountryDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryDetailsViewController.swift; sourceTree = "<group>"; };
+		8788430027DA4B9400ED87FC /* ImageLoading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoading.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,7 +75,7 @@
 				878842C827D9ED7E00ED87FC /* AppDelegate.swift */,
 				878842E627DA0E8200ED87FC /* Router.swift */,
 				878842EC27DA10D300ED87FC /* Shared */,
-				878842EB27DA109100ED87FC /* Country Search */,
+				878842EB27DA109100ED87FC /* Country Search Feature */,
 				878842D127D9ED8000ED87FC /* Assets.xcassets */,
 				878842D327D9ED8000ED87FC /* LaunchScreen.storyboard */,
 				878842D627D9ED8000ED87FC /* Info.plist */,
@@ -88,9 +94,8 @@
 		878842DF27D9FC1700ED87FC /* Domain Layer */ = {
 			isa = PBXGroup;
 			children = (
-				878842EA27DA107C00ED87FC /* Protocols */,
-				878842E027D9FC1D00ED87FC /* Models */,
 				878842E427DA0E6100ED87FC /* CountrySearchProcess.swift */,
+				878842E027D9FC1D00ED87FC /* Models */,
 			);
 			path = "Domain Layer";
 			sourceTree = "<group>";
@@ -106,6 +111,7 @@
 		878842E827DA100F00ED87FC /* UI Layer */ = {
 			isa = PBXGroup;
 			children = (
+				878842F627DA1C5D00ED87FC /* Cells */,
 				878842E927DA101E00ED87FC /* ViewControllers */,
 			);
 			path = "UI Layer";
@@ -115,25 +121,19 @@
 			isa = PBXGroup;
 			children = (
 				878842CC27D9ED7E00ED87FC /* CountrySearchViewController.swift */,
+				878842F927DA2D9700ED87FC /* CountryDetailsViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
 		};
-		878842EA27DA107C00ED87FC /* Protocols */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Protocols;
-			sourceTree = "<group>";
-		};
-		878842EB27DA109100ED87FC /* Country Search */ = {
+		878842EB27DA109100ED87FC /* Country Search Feature */ = {
 			isa = PBXGroup;
 			children = (
 				878842E827DA100F00ED87FC /* UI Layer */,
 				878842DF27D9FC1700ED87FC /* Domain Layer */,
 				878842DC27D9F3E200ED87FC /* Network Layer */,
 			);
-			path = "Country Search";
+			path = "Country Search Feature";
 			sourceTree = "<group>";
 		};
 		878842EC27DA10D300ED87FC /* Shared */ = {
@@ -166,8 +166,17 @@
 			isa = PBXGroup;
 			children = (
 				878842F427DA122E00ED87FC /* NetworkService.swift */,
+				8788430027DA4B9400ED87FC /* ImageLoading.swift */,
 			);
 			path = Network;
+			sourceTree = "<group>";
+		};
+		878842F627DA1C5D00ED87FC /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				878842F727DA1DE000ED87FC /* CountryCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -242,9 +251,12 @@
 			files = (
 				878842E527DA0E6100ED87FC /* CountrySearchProcess.swift in Sources */,
 				878842CD27D9ED7E00ED87FC /* CountrySearchViewController.swift in Sources */,
+				878842F827DA1DE000ED87FC /* CountryCell.swift in Sources */,
 				878842C927D9ED7E00ED87FC /* AppDelegate.swift in Sources */,
 				878842E727DA0E8200ED87FC /* Router.swift in Sources */,
 				878842DE27D9F41100ED87FC /* CountrySearchNetwork.swift in Sources */,
+				8788430127DA4B9400ED87FC /* ImageLoading.swift in Sources */,
+				878842FA27DA2D9700ED87FC /* CountryDetailsViewController.swift in Sources */,
 				878842F527DA122E00ED87FC /* NetworkService.swift in Sources */,
 				878842EF27DA10EB00ED87FC /* BaseViewController.swift in Sources */,
 				878842E227D9FC2900ED87FC /* CountryModelRaw.swift in Sources */,
